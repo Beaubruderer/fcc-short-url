@@ -1,9 +1,11 @@
 var mongoose = require('mongoose');
 var Url = require('./models/url.model.js');
 
-var db = mongoose.createConnection('mongodb://localhost:27017/db');
+var mongo_uri =  process.env.MONGOLAB_URI || 'mongodb://localhost:27017/db';
 
-var testUrl = 'http://www.gracedecastro.com';
+var db = mongoose.createConnection(mongo_uri);
+
+var testUrl = 'http://www.tiggerandbuddy.com';
 
 var newUrl = Url({
     long_url: testUrl

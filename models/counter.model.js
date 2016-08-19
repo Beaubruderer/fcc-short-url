@@ -1,7 +1,9 @@
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
-var db = mongoose.createConnection('mongodb://localhost:27017/db');
+var mongo_uri = process.env.MONGOLAB_URI || 'mongodb://localhost:27017/db';
+
+var db = mongoose.createConnection(mongo_uri);
 
 var CounterSchema = new Schema({
     _id: { type: String, required: true },

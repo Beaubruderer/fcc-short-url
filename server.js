@@ -5,8 +5,10 @@ var path = require('path');
 var express = require('express');
 var base58 = require('./base58.js');
 
+var mongo_uri =  process.env.MONGOLAB_URI || 'mongodb://localhost:27017/db';
+
 var app = express();
-var db = mongoose.createConnection('mongodb://localhost:27017/db');
+var db = mongoose.createConnection(mongo_uri);
 
 app.get('/', (req, res) => {
     //loads homepage 
