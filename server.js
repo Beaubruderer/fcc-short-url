@@ -10,6 +10,8 @@ var mongo_uri =  process.env.MONGOLAB_URI || 'mongodb://localhost:27017/db';
 var app = express();
 var db = mongoose.createConnection(mongo_uri);
 
+app.use(express.static(path.join(__dirname, 'public')));
+
 app.get('/', (req, res) => {
     //loads homepage 
     res.sendfile(path.join(__dirname, 'public/index.html'))
