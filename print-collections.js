@@ -2,7 +2,7 @@ var mongo = require('mongodb');
 var client = mongo.MongoClient;
 
 
-var mongo_uri =  process.env.MONGOLAB_URI || 'mongodb://localhost:27017/db';
+var mongo_uri =  process.env.MONGODB_URI || 'mongodb://localhost:27017/db';
 
 client.connect(mongo_uri, (err, db) => {
     

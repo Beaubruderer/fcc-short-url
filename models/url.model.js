@@ -2,7 +2,7 @@ var mongoose = require('mongoose');
 var Counter = require('./counter.model.js');
 var Schema = mongoose.Schema;
 
-var mongo_uri =  process.env.MONGOLAB_URI || 'mongodb://localhost:27017/db';
+var mongo_uri =  process.env.MONGODB_URI || 'mongodb://localhost:27017/db';
 
 var db = mongoose.createConnection(mongo_uri);
 
